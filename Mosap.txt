@@ -30,7 +30,7 @@ manhaj-ai/
    - Tailwind CSS + Framer Motion (أنيميشن فخم)
    - Zustand (إدارة الحالة)
    - @tma.js/sdk-react (أحدث إصدار)
-   - Gemini 2.5 Flash فقط (من المفتاح الموجود في الكود)
+   - Gemini 2.0 Flash فقط (من المفتاح الموجود في الكود)
    - Supabase بدل SQLite (أنشئ setup.sql كامل من جدول الطلاب وكل الجداول)
 
 5. **نظام الإدارة الذكي (الأهم)**:
