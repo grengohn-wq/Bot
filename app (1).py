@@ -33,7 +33,7 @@ print("🚀 بدء تشغيل بوت منهج Ai...")
 
 # الأساسيات
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BOT_TOKEN = "8522705485:AAFhy_d8-MFGGV8cPLS-ufo0_XRGzSMUQSY"
+BOT_TOKEN = "8522705485:AAHeqccrQ5GpXi4HiQzwyEJwQo4yt6P82Uc"
 CONFIG_FILE = f'{BASE_DIR}/البيانات/config.json' 
 
 # إعدادات المدير والإعلانات والبريميوم
@@ -89,7 +89,7 @@ def load_config():
         "contact_instagram": "mos_adn",
         "show_email": True,
         "show_instagram": True,
-        "main_gemini_token": "AIzaSyBr5cddPtXXQawQqE8-CbYf7POYtHCsPDM",
+        "main_gemini_token": "AIzaSyDTqXo6j5Pz5Ki5Y1fjFFGi3Uo6fp5R7b0",
         "premium_points_price": 1000
     }
     if not os.path.exists(CONFIG_FILE):
