@@ -4,20 +4,16 @@
     {
       "src": "api/*.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "web/package.json",
-      "use": "@vercel/next"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.py"
+      "src": "/",
+      "dest": "/api/bot.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "/web/$1"
+      "src": "/api/(.*)",
+      "dest": "/api/$1.py"
     }
   ]
 }
