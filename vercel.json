@@ -1,21 +1,43 @@
 {
   "version": 2,
-  "functions": {
-    "api/bot.py": {
-      "runtime": "@vercel/python@3.12"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "src": "api/bot.py",
+      "use": "@vercel/python"
     },
     {
-      "source": "/(.*)",
-      "destination": "/web/dist/$1"
+      "src": "api/chat.py", 
+      "use": "@vercel/python"
+    },
+    {
+      "src": "api/tasks.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "api/stats.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "web/package.json",
+      "use": "@vercel/next"
     }
   ],
-  "env": {
-    "NODE_ENV": "production"
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/web/$1"
+    }
+  ],
+  "functions": {
+    "api/bot.py": {
+      "runtime": "python@3.9"
+    },
+    "api/chat.py": {
+      "runtime": "python@3.9"
+    }
   }
 }
