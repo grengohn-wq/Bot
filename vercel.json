@@ -2,42 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/bot.py",
+      "src": "*.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "api/chat.py", 
-      "use": "@vercel/python"
-    },
-    {
-      "src": "api/tasks.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "api/stats.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "web/package.json",
-      "use": "@vercel/next"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/web/$1"
-    }
-  ],
-  "functions": {
-    "api/bot.py": {
-      "runtime": "python@3.9"
-    },
-    "api/chat.py": {
-      "runtime": "python@3.9"
-    }
-  }
+  ]
 }
