@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/bot.py": {
-      "runtime": "@vercel/python@3.10"
+      "runtime": "@vercel/python@3.12"
     }
   },
   "rewrites": [
@@ -17,5 +17,12 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "web/dist" }
+    }
+  ]
 }
