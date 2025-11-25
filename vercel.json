@@ -17,12 +17,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "builds": [
-    {
-      "src": "web/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "web/dist" }
-    }
-  ]
+  }
 }
