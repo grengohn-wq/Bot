@@ -1,0 +1,6 @@
+python-telegram-bot==20.7
+google-generativeai==0.3.2
+supabase==2.3.0
+postgrest==0.12.0
+storage3==0.7.0
+realtime==1.0.0

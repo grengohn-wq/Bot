@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- تحسين للهواتف الذكية -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- تحميل خط عربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Colors and Theme -->
+    <meta name="theme-color" content="#10b981">
+    <meta name="color-scheme" content="dark light">
+    
+    <!-- SEO -->
+    <title>منهج AI - دراستك بذكاء</title>
+    <meta name="description" content="بوت منهج AI الذكي - احصل على إجابات منهجية دقيقة، اكسب النقاط، وادرس بذكاء مع أحدث تقنيات الذكاء الاصطناعي">
+    <meta name="keywords" content="منهج AI, تعليم, ذكاء اصطناعي, مدرسة, جامعة, دراسة">
+    <meta name="author" content="مصعب فهد">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="منهج AI - دراستك بذكاء">
+    <meta property="og:description" content="بوت منهج AI الذكي للطلاب العرب">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    
+    <!-- Telegram Mini App Script -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <style>
+      /* Loading Animation */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #10b981, #059669);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      
+      .loading-logo {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        animation: pulse 2s infinite;
+      }
+      
+      .hidden-loading {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      /* RTL Support */
+      html[dir="rtl"] * {
+        text-align: right;
+      }
+      
+      html[dir="rtl"] .flex {
+        flex-direction: row-reverse;
+      }
+      
+      /* Custom scrollbar for Arabic */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #1f2937;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #10b981;
+        border-radius: 3px;
+      }
+      
+      /* Animation keyframes */
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      
+      /* Disable text selection on mobile */
+      * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Allow text selection for input fields */
+      input, textarea {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+    </style>
+  </head>
+  <body class="font-arabic bg-gray-900 text-white min-h-screen">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-logo">
+        <div>🧠</div>
+        <div>منهج AI</div>
+        <div style="font-size: 0.9rem; margin-top: 8px; opacity: 0.8;">جاري التحميل...</div>
+      </div>
+    </div>
+    
+    <!-- React Root -->
+    <div id="root"></div>
+    
+    <!-- Scripts -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Hide loading screen after React loads -->
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.classList.add('hidden-loading');
+            setTimeout(() => {
+              loadingScreen.remove();
+            }, 500);
+          }
+        }, 1000);
+      });
+      
+      // Initialize Telegram Web App
+      if (typeof window.Telegram !== 'undefined') {
+        window.Telegram.WebApp.ready();
+        window.Telegram.WebApp.expand();
+        
+        // Set theme colors
+        window.Telegram.WebApp.setHeaderColor('#10b981');
+        window.Telegram.WebApp.setBackgroundColor('#111827');
+      }
+    </script>
+  </body>
+</html>

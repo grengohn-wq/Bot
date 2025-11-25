@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#grad1)" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Brain Icon -->
+  <g transform="translate(50,50)">
+    <!-- Brain Left Hemisphere -->
+    <path d="M-15,-10 Q-20,-15 -15,-20 Q-10,-25 -5,-20 Q-2,-15 -5,-10 Q-10,-5 -15,-10Z" fill="#fff" opacity="0.9"/>
+    <!-- Brain Right Hemisphere -->
+    <path d="M5,-10 Q2,-15 5,-20 Q10,-25 15,-20 Q20,-15 15,-10 Q10,-5 5,-10Z" fill="#fff" opacity="0.9"/>
+    
+    <!-- Neural Connections -->
+    <circle cx="-8" cy="-12" r="1.5" fill="#fff" opacity="0.8"/>
+    <circle cx="8" cy="-12" r="1.5" fill="#fff" opacity="0.8"/>
+    <circle cx="-8" cy="-8" r="1" fill="#fff" opacity="0.6"/>
+    <circle cx="8" cy="-8" r="1" fill="#fff" opacity="0.6"/>
+    
+    <!-- Book Symbol Below -->
+    <rect x="-8" y="5" width="16" height="10" rx="1" fill="#fff" opacity="0.9"/>
+    <line x1="-8" y1="9" x2="8" y2="9" stroke="#10b981" stroke-width="1"/>
+    <line x1="-5" y1="11" x2="5" y2="11" stroke="#10b981" stroke-width="0.5"/>
+    <line x1="-6" y1="13" x2="6" y2="13" stroke="#10b981" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Arabic Text -->
+  <text x="50" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#fff">منهج AI</text>
+</svg>
